@@ -7,16 +7,19 @@ module.exports = {
       [
         {
           name: "Tune my Guitar",
+          userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           name: "Clear my Guitar",
+          userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           name: "Break my Guitar",
+          userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

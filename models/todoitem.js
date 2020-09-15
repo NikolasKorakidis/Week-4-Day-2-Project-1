@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      todoItem.belongsTo(models.todoList);
     }
   }
   todoItem.init(
@@ -18,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "todoItems",
+      modelName: "todoItem",
     }
   );
   return todoItem;

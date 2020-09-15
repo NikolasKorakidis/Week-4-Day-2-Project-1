@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       todoList.belongsTo(models.user);
+      todoList.hasMany(models.todoItem);
     }
   }
   todoList.init(
@@ -17,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "todoLists",
+      modelName: "todoList",
     }
   );
   return todoList;
