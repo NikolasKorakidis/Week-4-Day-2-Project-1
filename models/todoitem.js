@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      todoItem.belongsTo(models.todoList);
+      todoItem.belongsTo(models.todoList, { foreignKey: "listId" });
       todoItem.belongsToMany(models.tag, {
         through: "itemTags",
         foreignKey: "todoItemId",
