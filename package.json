@@ -20,6 +20,9 @@
   "homepage": "https://github.com/NikolasKorakidis/Week-4-Day-2-Project-1#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
   }
 }
