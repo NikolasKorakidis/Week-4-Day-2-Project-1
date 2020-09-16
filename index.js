@@ -2,11 +2,14 @@ const User = require("./models").user;
 const TodoList = require("./models").todoList;
 const express = require("express");
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
+const cors = require("cors");
+
 const serverMessage = (arg) =>
   console.log(`Your server is running on PORT: ${arg}`);
 
 app.use(express.json());
+app.use(cors());
 
 app.post("/echo", (req, res) => {
   res.json(req.body);
