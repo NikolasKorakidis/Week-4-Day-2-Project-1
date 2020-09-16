@@ -79,4 +79,21 @@ app.get("/users/:userId/lists", async (req, res, next) => {
   }
 });
 
+app.get("/users/:userId/lists/:listId", async (req, res, next) => {
+  try {
+    const userId = parseInt(req.params.userId);
+    const listId = parseInt(req.params.listId);
+    const user = await User.findByPk(userId, {
+      include: [TodoList],
+    });
+    if (user) {
+      res.send(user.todoLists[listId - 1]);
+    } else {
+      res.status(404).send("User not found");
+    }
+  } catch (e) {
+    next(e);
+  }
+});
+
 app.listen(PORT, serverMessage(PORT));
